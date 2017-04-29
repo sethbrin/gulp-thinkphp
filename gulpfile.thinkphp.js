@@ -115,6 +115,7 @@ gulp.task('serve', ['revreplace'], () => {
   connectPhp.server({port:8080, hostname:'127.0.0.1'}, ()=>{
     browserSync({
       proxy: '127.0.0.1:8080'
+      serveStatic: ['./production/']
     });
   });
   gulp.watch(config.app + '/**/*.scss', ['build']);
